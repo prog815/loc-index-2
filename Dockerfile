@@ -6,6 +6,8 @@ COPY . /app
 
 RUN pip3 install -r requirements.txt
 
+RUN python ./init_db.py
+
 ENTRYPOINT ["python"]
 
 CMD ["app.py"]

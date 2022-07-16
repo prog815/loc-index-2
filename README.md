@@ -13,7 +13,7 @@ cd loc-index2/
 ## Создание контейнера по команде:
 
 ```
-docker build --pull --rm -f "Dockerfile" -t locindex2:latest "."
+docker build --pull --rm -f "Dockerfile" -t locindex2:latest .
 ```
 
 ## Запуск по команде:
