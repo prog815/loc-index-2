@@ -7,7 +7,7 @@ git clone https://github.com/prog815/loc-index-2.git
 ```
 Получится каталог с файлами. Переходим в него.
 ```
-cd loc-index2/
+cd loc-index-2/
 ```
 
 ## Создание контейнера по команде:
