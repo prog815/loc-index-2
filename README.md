@@ -10,17 +10,20 @@ git clone https://github.com/prog815/loc-index-2.git
 cd loc-index-2/
 ```
 
-## Создание контейнера по команде:
+## Создание контейнера по команде
+
+Теперь создадим контейнер из скачанного образа:
 
 ```
 docker build --pull --rm -f "Dockerfile" -t locindex2:latest .
 ```
 
-## Запуск по команде:
+## Запуск контейнера
 
 ```
-docker run -d -p80:5000 locindex2
+docker run -d -p80:5000 --mount type=bind,source="$(pwd)"/files,target=/vars/files,readonly locindex2
 ```
 
 ## Работа с программой
+
 Запускаем в браузере http://localhost и в поисковой строке пишем через пробелы последовательности символов которые должны быть в пути к файлу. Жмем "искать". Видим результат перед собой.
