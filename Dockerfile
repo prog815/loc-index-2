@@ -5,9 +5,10 @@ WORKDIR /app
 COPY . /app
 
 RUN pip3 install -r requirements.txt
-
 RUN python ./init_db.py
 
-ENTRYPOINT ["python"]
+RUN touch /app/update.log
+RUN echo "* * * * * cd /app; /bin/sh ./update.sh >> ./update.log 2>&1" > /app/crontab
+RUN crontab /app/crontab
 
-CMD ["app.py"]
+CMD crond && python ./app.py
