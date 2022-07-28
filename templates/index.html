@@ -3,6 +3,6 @@
 {% block content %}
     <h1>{% block title %} Главная страница проекта {% endblock %}</h1>
     {% for row in rows %}
-        <h2>{{ row['file_path'] }}</h2>
+        <h2> <a href={{ url_for('static', filename='files/' + row['file_path']) }} download="">{{ row['file_path'] }}</a></h2>
     {% endfor %}
 {% endblock %}
