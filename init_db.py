@@ -8,8 +8,8 @@ with open('schema.sql') as fp:
 
 cur = connection.cursor()
 
-cur.execute("INSERT INTO files (file_path) VALUES (?)", ('//host1/path1.ext',))
-cur.execute("INSERT INTO files (file_path) VALUES (?)", ('//host2/path2.ext',))
+cur.execute("INSERT INTO files (file_search,file_path) VALUES (?,?)", ('//host1/path1.ext','//host1/path1.ext'))
+cur.execute("INSERT INTO files (file_search,file_path) VALUES (?,?)", ('//host2/path2.ext','//host2/path2.ext'))
 
 
 connection.commit()

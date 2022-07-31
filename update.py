@@ -15,11 +15,11 @@ if __name__ == '__main__':
         con = conn.cursor()
         
         con.execute('DROP TABLE IF EXISTS files')
-        con.execute('CREATE TABLE files (file_path TEXT NOT NULL)')
+        con.execute('CREATE TABLE files (file_search TEXT NOT NULL,file_path TEXT NOT NULL)')
         
         while True:
             try:
                 s = input()
-                con.execute('INSERT INTO files (file_path) VALUES (?)',(s,))
+                con.execute('INSERT INTO files (file_search,file_path) VALUES (?,?)',(s.casefold(),s))
             except:
                 break
